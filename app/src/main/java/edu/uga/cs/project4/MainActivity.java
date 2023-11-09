@@ -1,7 +1,11 @@
 package edu.uga.cs.project4;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,6 +15,39 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Button buttonFragment1 = findViewById(R.id.button);
+        Button buttonFragment2 = findViewById(R.id.button2);
+        Button buttonFragment3 = findViewById(R.id.button3);
+
+        buttonFragment1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launchFragment(new Fragment1());
+            }
+        });
+
+        buttonFragment2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launchFragment(new Fragment2());
+            }
+        });
+
+        buttonFragment3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launchFragment(new Fragment3());
+            }
+        });
+    }
+
+    private void launchFragment(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragmentContainer, fragment)
+                .addToBackStack(null)  // Optional: if you want to support back navigation
+                .commit();
+    }
+
 
         // Initialize the database helper
         quizDBHelper = new QuizDBHelper(this);
