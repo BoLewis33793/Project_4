@@ -9,6 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="Hello! This quiz is on state capitals. Please select the given state capital then click submit to lock in your answer. To launch the quiz or quiz scores sections, please return to the home page. "
+        android:textSize="40dp" />
 
 </FrameLayout>
