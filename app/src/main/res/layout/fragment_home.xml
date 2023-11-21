@@ -32,7 +32,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="202dp"
-            android:text="EXTRA COOL  SPLASH SCREEN"
+            android:text="Choose an option below"
             android:textSize="40dp" />
 
         <Button
